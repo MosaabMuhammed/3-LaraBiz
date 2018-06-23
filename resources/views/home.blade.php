@@ -25,7 +25,12 @@
                             <tr>
                                 <td>{{ $listing->name }}</td>
                                 <td> <a class="btn btn-default pull-right" href="/listing/{{ $listing->id }}/edit">Edit</a></td>
-                                <td></td>
+                                <td>
+                                    {!! Form::open(['action' => ['ListingsController@destroy', $listing->id ], 'method' => 'POST', 'class' => 'pull-left', 'onclick' => 'return confirm("Are you Sure?")']) !!}
+                                        {{ Form::hidden('_method', 'DELETE')}}
+                                        {{ Form::bsSubmit('Delete', ['class' => 'btn btn-danger']) }}
+                                    {!! Form::close() !!}
+                                </td>
                             </tr>
                         @endforeach
                     </table>

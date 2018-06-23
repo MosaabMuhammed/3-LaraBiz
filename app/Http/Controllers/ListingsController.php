@@ -14,7 +14,8 @@ class ListingsController extends Controller
      */
     public function index()
     {
-        //
+        $listings = Listing::latest()->get();
+        return view('index', compact('listings'));
     }
 
     /**
@@ -65,7 +66,8 @@ class ListingsController extends Controller
      */
     public function show($id)
     {
-        //
+        $listing = Listing::find($id);
+        return view('show', compact('listing'));
     }
 
     /**
@@ -111,6 +113,9 @@ class ListingsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $listing = Listing::find($id);
+        $listing->delete();
+
+        return redirect('/home')->with('success', 'Listing Removed!');
     }
 }
