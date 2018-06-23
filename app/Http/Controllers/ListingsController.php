@@ -7,6 +7,9 @@ use App\Listing;
 
 class ListingsController extends Controller
 {
+    public function __construct(){
+        return $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      *
