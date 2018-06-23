@@ -12,7 +12,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <h1 class="pull-left"> Your Listings:</h1> <span class="pull-right" style="margin-top: 33px"> <a href="/listings/create" class="btn btn-success btn-xs">Add Listing</a></span>
+                <h1 class="pull-left"> Your Listings:</h1> <span class="pull-right" style="margin-top: 33px"> <a href="/listing/create" class="btn btn-success btn-xs">Add Listing</a></span>
                 <br>
                 @if(count($listings))
                     <table class="table table-striped">

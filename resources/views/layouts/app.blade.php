@@ -72,9 +72,9 @@
         </nav>
 
         <div class="container">
-
+            @include('inc.messages')
             @yield('content')
-            
+
         </div>
     </div>
 
